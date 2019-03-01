@@ -32,11 +32,7 @@ class PostsController < ApplicationController
   end
 
   def delete
-    if current_user != User.first
-      redirect_to root_path
-    end
-    Post.find(params[:id]).destroy
-    redirect_to root_path
+
   end
 
   private

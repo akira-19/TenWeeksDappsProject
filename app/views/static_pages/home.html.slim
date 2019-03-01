@@ -45,4 +45,5 @@ div.container-fluid
           span Schedule
           div = link_to("#{post.trelloURL}", post.trelloURL)
 
+div.login_button = link_to("logout", destroy_user_session_path, method: :delete)
 div.login_button = link_to("login", new_user_session_path)
