@@ -1,2 +1,33 @@
-h1 Posts#edit
-p Find me in app/views/posts/edit.html.slim
+div
+  = form_with model: @post, local: true do |form|
+    = form.label :PublishedDate
+    = form.date_select :published, class: 'form-control'
+    br
+    = form.label :name
+    = form.text_field :name, class: 'form-control'
+
+    = form.label :Feature1
+    = form.text_field :fone, class: 'form-control'
+
+    = form.label :Feature2
+    = form.text_field :ftwo, class: 'form-control'
+
+    = form.label :Feature3
+    = form.text_field :fthree, class: 'form-control'
+
+    = form.label :Feature4
+    = form.text_field :ffour, class: 'form-control'
+
+    = form.label :Feature5
+    = form.text_field :ffive, class: 'form-control'
+
+    = form.label :trelloURL
+    = form.text_field :trelloURL, class: 'form-control'
+
+    = form.label :siteURL
+    = form.text_field :siteURL, class: 'form-control'
+
+    = form.label :Image
+    = form.file_field :image, class: 'form-control'
+
+    = form.submit class: "btn btn-primary"

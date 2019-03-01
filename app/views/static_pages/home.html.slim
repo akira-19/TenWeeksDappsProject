@@ -3,10 +3,10 @@ div.jumbotron.jumbotoron-extend
     h2 10 weeks challenge
     p Create a Dapp Every Week
     button.btn.btn-dark Check the Dapps
-    button.btn.btn-primary
-      = link_to("login", new_user_session_path)
-      / - if current_user == User.main_user
-      /   = link_to("new post", "#")
+    - if current_user == User.first
+      button.btn.btn-primary
+        = link_to("New Post", new_post_path)
+
 
 div.container-fluid
   - @posts.each do |post|
@@ -14,7 +14,10 @@ div.container-fluid
       tr
         td#picture rowspan="4"
           img src="#{post.image}"
-        td.col2#row1 = post.name
+        td.col2#row1
+         = link_to(post.name, post.siteURL)
+         - if current_user == User.first
+           = link_to("edit", edit_post_path(post))
       tr
         td.col2#row2
           span Published in &nbsp;
@@ -25,19 +28,21 @@ div.container-fluid
           ul
             li
               = post.fone
-            - if post.ftwo
+            - if post.ftwo.present?
               li
                 = post.ftwo
-            - if post.fthree
+            - if post.fthree.present?
               li
                 = post.fthree
-            - if post.ffour
+            - if post.ffour.present?
               li
                 = post.ffour
-            - if post.ffive
+            - if post.ffive.present?
               li
                 = post.ffive
       tr
         td.col2#row4
           span Schedule
-          div = post.trelloURL
+          div = link_to("#{post.trelloURL}", post.trelloURL)
+
+div.login_button = link_to("login", new_user_session_path)

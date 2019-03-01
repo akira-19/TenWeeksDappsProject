@@ -53,6 +53,7 @@
   td{
     margin: 0;
     padding: 0;
+    vertical-align: top;
   }
 
 
@@ -102,5 +103,20 @@
       object-fit: cover;
     }
   }
+
+}
+
+.login_button a:link{
+  color: rgba(255, 255, 255, 100%);
+  cursor: default;
+}
+.login_button a:hover{
+  color: rgba(255, 255, 255, 100%);
+  cursor: default;
+
+}
+.login_button a:visited{
+  color: rgba(255, 255, 255, 100%);
+  cursor: default;
 
 }
