@@ -1,0 +1,41 @@
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+.jumbotoron-extend{
+  position: relative;
+  height: 100vh;
+  min-height: 300px;
+  background: url(ether.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.jumbotoron-container {
+    position: absolute;
+    right: 0;
+    top:40%;
+    width: 35%;
+
+
+
+    h2{
+      font-family: 'Playfair Display', serif;
+      font-size: calc(150% + 1.5vw);
+      color: white;
+    }
+    p{
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: white;
+    }
+    button{
+      font-family: 'Playfair Display', serif;
+    }
+}
+
+.form-control{
+  width: 500px;
+  margin: 10px;
+}

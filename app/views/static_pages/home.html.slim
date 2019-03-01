@@ -1,0 +1,27 @@
+div.jumbotron.jumbotoron-extend
+  div.container-fluid.jumbotoron-container
+    h2 10 weeks challenge
+    p Create a Dapp Every Week
+    button.btn.btn-dark Check the Dapps
+    button.btn.btn-primary
+      = link_to("login", new_user_session_path)
+      / - if current_user == User.main_user
+      /   = link_to("new post", "#")
+
+div.container-fluid
+  - @posts.each do |post|
+    table
+      tr
+        td rowspan="4"
+          img src="#{post.image}"
+        td Date:
+        td = post.published
+      tr
+        td Name:
+        td = post.name
+      tr
+        td Features
+        td = post.fone
+      tr
+        td Schedule
+        td
