@@ -39,3 +39,68 @@
   width: 500px;
   margin: 10px;
 }
+
+.projectTable{
+  width: 850px;
+  margin: 60px auto;
+  height: 300px;
+  border: 1px solid #CCC;
+
+  tr{
+    margin: 0;
+    padding: 0;
+  }
+  td{
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .col2{
+    padding-left: 8px;
+  }
+
+  #row1{
+    font-size: 30px;
+    font-weight: bold;
+    height: 36px;
+  }
+  #row2{
+    height: 18px;
+    span:nth-child(2){
+      font-weight: bold;
+    }
+  }
+  #row3{
+    padding-top: 10px;
+
+    span{
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+  #row4{
+    height: 50px;
+    span:first-child{
+      font-size: 18px;
+      font-weight: bold;
+    }
+    div{
+      margin-left: 40px;
+    }
+  }
+
+  #picture {
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    img{
+      margin: 0;
+      padding: 0;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+
+}

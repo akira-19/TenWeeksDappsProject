@@ -10,18 +10,34 @@ div.jumbotron.jumbotoron-extend
 
 div.container-fluid
   - @posts.each do |post|
-    table
+    table.projectTable
       tr
-        td rowspan="4"
+        td#picture rowspan="4"
           img src="#{post.image}"
-        td Date:
-        td = post.published
+        td.col2#row1 = post.name
       tr
-        td Name:
-        td = post.name
+        td.col2#row2
+          span Published in &nbsp;
+          span = post.published
       tr
-        td Features
-        td = post.fone
+        td.col2#row3
+          span Features
+          ul
+            li
+              = post.fone
+            - if post.ftwo
+              li
+                = post.ftwo
+            - if post.fthree
+              li
+                = post.fthree
+            - if post.ffour
+              li
+                = post.ffour
+            - if post.ffive
+              li
+                = post.ffive
       tr
-        td Schedule
-        td
+        td.col2#row4
+          span Schedule
+          div = post.trelloURL
