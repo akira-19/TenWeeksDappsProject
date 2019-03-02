@@ -1,13 +1,13 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
-    if current_user != User.first
+    if !(User.first && current_user == User.first)
       redirect_to root_path
     end
   end
 
   def create
-    if current_user != User.first
+    if !(User.first && current_user == User.first)
       redirect_to root_path
     end
     @post = Post.new(post_params)
@@ -16,14 +16,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if current_user != User.first
+    if !(User.first && current_user == User.first)
       redirect_to root_path
     end
     @post = Post.find(params[:id])
   end
 
   def update
-    if current_user != User.first
+    if !(User.first && current_user == User.first)
       redirect_to root_path
     end
     @post = Post.find(params[:id])
