@@ -13,7 +13,7 @@ div.container-fluid
     table.projectTable
       tr
         td#picture rowspan="4"
-          img src="#{post.image}"
+          = img_tag("#{post.image}")
         td.col2#row1
          = link_to(post.name, post.siteURL)
          - if current_user && current_user == User.first
