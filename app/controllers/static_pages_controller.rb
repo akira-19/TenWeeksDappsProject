@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    @posts = Post.all
+    @posts = Post.all.order(published: "DESC")
   end
 end
