@@ -42,7 +42,7 @@ div.container-fluid
                 = post.ffive
       tr
         td.col2#row4
-          span Schedule
+          span Source code
           div = link_to("#{post.trelloURL}", post.trelloURL)
 
 div.login_button = link_to("logout", destroy_user_session_path, method: :delete)
