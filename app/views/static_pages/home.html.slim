@@ -2,13 +2,13 @@ div.jumbotron.jumbotoron-extend
   div.container-fluid.jumbotoron-container
     h2 10 weeks challenge
     p Create a Dapp Every Week
-    button.btn.btn-dark Check the Dapps
+    = link_to "Check the Dapps", {anchor: "mainContent"}, class:'btn btn-dark'
     - if current_user && current_user == User.first
       button.btn.btn-primary
         = link_to("New Post", new_post_path)
 
 
-div.container-fluid
+div.container-fluid#mainContent
   - @posts.each do |post|
     table.projectTable
       tr
